@@ -291,4 +291,56 @@ footer {
 
 .btn-view i {
     margin-left: 5px;
+
+}
+/* =========================================
+   Mobile Responsive (หน้าจอมือถือ)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. เพิ่มพื้นที่ว่างด้านข้างของเนื้อหา (ไม่ให้ชิดขอบจอเกินไป) */
+    .container {
+        padding: 20px 15px; /* บน-ล่าง 20px, ซ้าย-ขวา 15px */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 2. ปรับขนาดตัวอักษรให้อ่านง่ายขึ้นบนมือถือ */
+    h1 {
+        font-size: 28px; /* ปรับขนาดหัวข้อ */
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.6; /* เพิ่มความห่างระหว่างบรรทัดให้อ่านง่าย */
+        text-align: left; /* หรือเปลี่ยนเป็น justify หากต้องการให้ข้อความเรียงเต็มบรรทัด */
+    }
+
+    /* 3. ปรับรูปโปรไฟล์ (คุณต้องใส่ class ให้รูปใน HTML ก่อน เช่น class="profile-img") */
+    /* ตัวอย่างนี้จะจัดรูปให้มาอยู่กึ่งกลางเมื่อดูบนมือถือ */
+    .profile-img { 
+        display: block;
+        margin: 30px auto 10px auto; /* จัดกึ่งกลาง (ซ้าย-ขวาเป็น auto) */
+        width: 150px; /* ปรับขนาดรูปให้เหมาะสม */
+        height: 150px;
+        border-radius: 10px; /* หรือ 50% ถ้าอยากให้เป็นวงกลม */
+        object-fit: cover;
+    }
+
+    /* 4. ปรับเมนู Navigation (สมมติว่าโครงสร้างเดิมเป็นแนวนอน) */
+    nav {
+        flex-direction: column; /* เปลี่ยนให้เมนูเรียงลงมาในแนวตั้ง */
+        align-items: center;
+        padding: 15px;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap; /* เผื่อเมนูยาวเกินจอให้ปัดลงบรรทัดใหม่ */
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
 }
